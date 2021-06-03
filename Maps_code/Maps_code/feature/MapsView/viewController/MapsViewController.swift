@@ -10,10 +10,21 @@ import GoogleMaps
 
 class MapsViewController: UIViewController {
 
+    private var mapsViewModel : MapsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMap()
+        callToViewModelForUIUpdate()
+
+    }
+    
+    func callToViewModelForUIUpdate(){
+        
+        self.mapsViewModel =  MapsViewModel()
+        self.mapsViewModel.bindEmployeeViewModelToController = {
+            //self.updateDataSource()
+        }
     }
     
     func configureMap(){        
