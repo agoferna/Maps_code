@@ -33,7 +33,7 @@ class MapsViewController: UIViewController {
     
     func configureMap(){        
         if let view = self.view as? MapsView {
-            view.configureView()
+            view.configureView(delegate: self)
         }
     }
     
@@ -55,7 +55,32 @@ class MapsViewController: UIViewController {
             }
         }
     }
+    
+    func configureMapStopsAndPolyline(selectedTrip: Int){
+        
+        if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
+            
+            for stop in trip.stops {
+            
+                if let latitude = stop?.point?.latitude, let longitude = stop?.point?.longitude {
+                
+                let position = CLLocationCoordinate2D(
+                    latitude: CLLocationDegrees.init(latitude),
+                    longitude: CLLocationDegrees.init(longitude))
+                let marker = GMSMarker(position: position)
+                    
+                    if let view = self.view as? MapsView {
+                        view.addMarker(marker: marker)
+                    }
+                }
+            }
+        }
+    }
+}
 
-
+extension MapsViewController : MapsViewProtocol {
+    func selectedRow(row: Int) {
+        self.configureMapStopsAndPolyline(selectedTrip: row)
+    }
 }
 

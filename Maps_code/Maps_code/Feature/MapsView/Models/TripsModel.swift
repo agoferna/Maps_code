@@ -52,7 +52,7 @@ struct Trip {
     var status : TripStatus?
     var endTime,startTime : Date?
     var destination, origin : Destination?
-    var stops : [Stops?]?
+    var stops : [Stops?] = []
     
     init(tripServiceModel: TripServiceModel){
         
@@ -84,7 +84,7 @@ struct Trip {
         if let serviceStopsArray = tripServiceModel.stops {
             for serviceStop in serviceStopsArray{
                 let stop = Stops.init(stopServiceModel: serviceStop)
-                self.stops?.append(stop)
+                self.stops.append(stop)
             }
         }
     }

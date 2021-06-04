@@ -37,4 +37,12 @@ class MapsViewModel : NSObject {
             
         })
     }
+    
+    func getTrip(tripIndex: Int) ->  Trip? {
+        if tripIndex < trips.count {
+            return trips[tripIndex]
+        } else {
+            return nil
+        }
+    }
 }

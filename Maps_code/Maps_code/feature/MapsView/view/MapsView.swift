@@ -12,14 +12,23 @@ private struct Constants {
     static let cellID : String = "TripsTableViewCell"
 }
 
+protocol MapsViewProtocol {
+    func selectedRow(row: Int)
+}
+
+
 class MapsView: UIView {
 
     @IBOutlet weak var mapsView: GMSMapView!
     @IBOutlet weak var mapsTableView: UITableView!
     
-    func configureView(){
+    var delegate : MapsViewProtocol?
+    
+    func configureView(delegate: MapsViewProtocol){
         configureMapsView()
         configureTableView()
+        self.delegate = delegate
+       // self.drawPolyLine(polyLine: <#T##String#>)
     }
     
     func configureMapsView(){
@@ -28,10 +37,28 @@ class MapsView: UIView {
     
     func configureTableView(){
         self.mapsTableView.register(UINib(nibName: Constants.cellID, bundle: nil), forCellReuseIdentifier: Constants.cellID)
+        self.mapsTableView.delegate = self
     }
     
-    func getTableView() -> UITableView {
-        return mapsTableView
+//    func drawPolyLine(polyLine: String){
+//       let routePolyline = GMSPolyline(path: polyLine)
+//        routePolyline.map = mapsView
+//    }
+    
+    func addMarker(marker: GMSMarker){
+        marker.map = mapsView
     }
+    
+    func deleteMarkers(){
+        mapsView.clear()
+    }
+    
+}
 
+extension MapsView : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        deleteMarkers()
+        self.delegate?.selectedRow(row: indexPath.row)
+    }
 }
