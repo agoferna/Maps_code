@@ -12,7 +12,7 @@ import Foundation
 
 class MapsViewModel : NSObject {
     
-    private(set) var trips : [Trip]! {
+    private(set) var trips : [Trip] = [] {
         didSet {
             self.bindEmployeeViewModelToController()
         }
@@ -27,9 +27,7 @@ class MapsViewModel : NSObject {
     
     func callFuncToGetTrips() {
         ApiRestManager.getTripsService({ (result) in
-            
-           print(result)
-            
+            self.trips = result
         }, {(error) in
                     
         })

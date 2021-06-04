@@ -23,7 +23,7 @@ class ApiRestManager {
 
     
     static func getTripsService(_ completion: @escaping (([Trip]) -> Void),
-                         _ error: @escaping ((NSError) -> ())){
+                         _ completionError: @escaping ((AFError) -> Void)){
         
         let tripsServiceUrl = "https://europe-west1-metropolis-fe-test.cloudfunctions.net/api/trips"
         AF.request(tripsServiceUrl,method: .get).responseJSON(completionHandler: { response in
@@ -37,14 +37,12 @@ class ApiRestManager {
                              let data = try JSONSerialization.data(withJSONObject: item, options: [])
                                let trip = try JSONDecoder().decode(Trip.self, from:data)
                             tripsData.append(trip)
-                           } catch  {
-                               print(error)
-                           }
+                           } catch  {}
                     }
                     completion(tripsData)
                }
             case .failure(let error):
-                print(error)
+                completionError(error)
             }
         })
         }
