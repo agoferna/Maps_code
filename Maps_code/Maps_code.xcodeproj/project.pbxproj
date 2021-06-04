@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */; };
 		2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7CC266A3E8D0099E1E7 /* Localizable.strings */; };
 		2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */; };
+		282813C4266A7BA600D9CEBA /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 282813C3266A7BA600D9CEBA /* Polyline */; };
 		2839518F26679260001E1B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839518E26679260001E1B1A /* AppDelegate.swift */; };
 		2839519126679260001E1B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519026679260001E1B1A /* SceneDelegate.swift */; };
 		2839519326679260001E1B1A /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519226679260001E1B1A /* MapsViewController.swift */; };
@@ -87,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				282813C4266A7BA600D9CEBA /* Polyline in Frameworks */,
 				7DEB8A8850BBF424A06D7889 /* Pods_Maps_code.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +313,9 @@
 			dependencies = (
 			);
 			name = Maps_code;
+			packageProductDependencies = (
+				282813C3266A7BA600D9CEBA /* Polyline */,
+			);
 			productName = Maps_code;
 			productReference = 2839518B26679260001E1B1A /* Maps_code.app */;
 			productType = "com.apple.product-type.application";
@@ -386,6 +391,9 @@
 				Base,
 			);
 			mainGroup = 283951822667925F001E1B1A;
+			packageReferences = (
+				282813C2266A7BA600D9CEBA /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
 			productRefGroup = 2839518C26679260001E1B1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -925,6 +933,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		282813C2266A7BA600D9CEBA /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		282813C3266A7BA600D9CEBA /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 282813C2266A7BA600D9CEBA /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 283951832667925F001E1B1A /* Project object */;
 }
