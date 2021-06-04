@@ -60,31 +60,31 @@ class MapsViewController: UIViewController {
     func configureMapWhenSelectRow(selectedTrip: Int){
        
         let markers = configureMapMarkers(selectedTrip: selectedTrip)
-        let polyline = configureMapPolyline(selectedTrip: selectedTrip)
+        let path = configureMapPolyline(selectedTrip: selectedTrip)
         if let view = self.view as? MapsView {
-            view.drawPolyLine(polyLine: polyline)
+            view.drawPolyLine(path: path)
+            view.zoomMap(path: path)
             for marker in markers {
                 view.addMarker(marker: marker)
             }
         }
     }
     
-    func configureMapPolyline(selectedTrip: Int) -> GMSPolyline?{
-        var resultPolyline : GMSPolyline? = nil
+    func configureMapPolyline(selectedTrip: Int) -> GMSMutablePath?{
+        var resultPolyline : GMSMutablePath? = nil
         if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
             
             let polyline = Polyline(encodedPolyline: trip.route ?? "")
             if let decodedCoordinates = polyline.coordinates {
-            let path = GMSMutablePath()
-            
-            for coordinates in decodedCoordinates {
-                path.add(coordinates)
-            }
-            
-                resultPolyline = GMSPolyline(path: path)
+                let path = GMSMutablePath()
+                
+                for coordinates in decodedCoordinates {
+                    path.add(coordinates)
+                }
+                resultPolyline = path
             }
         }
-       return resultPolyline
+        return resultPolyline
     }
     
     func configureMapMarkers(selectedTrip: Int) -> [GMSMarker]{

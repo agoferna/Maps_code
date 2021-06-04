@@ -39,16 +39,24 @@ class MapsView: UIView {
         self.mapsTableView.delegate = self
     }
     
-    func drawPolyLine(polyLine: GMSPolyline?){
-        if let finalPolyline = polyLine {
-            finalPolyline.strokeWidth = 2
-            finalPolyline.strokeColor = .red
-            finalPolyline.map = mapsView
+    func drawPolyLine(path: GMSMutablePath?){
+        if let path = path {
+            let polyline = GMSPolyline(path: path)
+            polyline.strokeWidth = 2
+            polyline.strokeColor = .red
+            polyline.map = mapsView
         }
     }
     
     func addMarker(marker: GMSMarker){
         marker.map = mapsView
+    }
+    
+    func zoomMap(path: GMSMutablePath?){
+        if let path = path {
+            let bounds = GMSCoordinateBounds(path: path)
+            mapsView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+        }
     }
     
     func deleteMarkers(){
