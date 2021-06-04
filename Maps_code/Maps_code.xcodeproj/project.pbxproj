@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */; };
+		2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */; };
 		2839518F26679260001E1B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839518E26679260001E1B1A /* AppDelegate.swift */; };
 		2839519126679260001E1B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519026679260001E1B1A /* SceneDelegate.swift */; };
 		2839519326679260001E1B1A /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519226679260001E1B1A /* MapsViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
+		2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
 		2839518B26679260001E1B1A /* Maps_code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps_code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2839518E26679260001E1B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2839519026679260001E1B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2808F7B7266A387C0099E1E7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2808F7B9266A38A70099E1E7 /* TripsTableViewCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		2808F7B9266A38A70099E1E7 /* TripsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */,
+				2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */,
+			);
+			path = TripsTableViewCell;
+			sourceTree = "<group>";
+		};
 		283951822667925F001E1B1A = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +193,6 @@
 		28901F2A2668D60700A051E8 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				286944E526691D8300FD98DF /* Models */,
 				28901F2B2668D61000A051E8 /* MapsView */,
 			);
 			path = Feature;
@@ -181,6 +201,8 @@
 		28901F2B2668D61000A051E8 /* MapsView */ = {
 			isa = PBXGroup;
 			children = (
+				2808F7B7266A387C0099E1E7 /* TableViewCells */,
+				286944E526691D8300FD98DF /* Models */,
 				28901F2E2668D63400A051E8 /* viewModel */,
 				28901F2D2668D62D00A051E8 /* view */,
 				28901F2C2668D62000A051E8 /* viewController */,
@@ -362,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */,
 				2839519B26679263001E1B1A /* LaunchScreen.storyboard in Resources */,
 				2839519826679263001E1B1A /* Assets.xcassets in Resources */,
 				2839519626679260001E1B1A /* MapsViewController.storyboard in Resources */,
@@ -526,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */,
 				28901F5426690D3800A051E8 /* ApiRestManager.swift in Sources */,
 				2839519326679260001E1B1A /* MapsViewController.swift in Sources */,
 				28901F332668D8ED00A051E8 /* MapsView.swift in Sources */,
