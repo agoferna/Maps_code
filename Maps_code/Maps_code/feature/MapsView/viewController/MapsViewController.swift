@@ -41,9 +41,10 @@ class MapsViewController: UIViewController {
         
         self.dataSource = EmployeeTableViewDataSource(cellIdentifier: Constants.cellName, items: self.mapsViewModel.trips, configureCell: { (cell, trip) in
            
-            cell.originLabel.text = "HOLA"
-            cell.destinationLabel.text = "Adios"
-            cell.statusLabel.text = "MUY BIEN"
+            cell.titleCellLabel.text = trip.description
+            cell.originLabel.text = trip.origin?.address
+            cell.destinationLabel.text = trip.destination?.address
+            cell.statusLabel.text = trip.status?.rawValue
             
         })
         

@@ -9,12 +9,7 @@ import Foundation
 
 // MARK: - Welcome
 
-struct Destination: Codable {
-    let address : String?
-    let point : Point?
-}
-
-struct Point: Codable {
+struct PointServiceModel: Codable {
     let _longitude : Double?
     let _latitude : Double?
     
@@ -25,9 +20,15 @@ struct Point: Codable {
     }
 }
 
-struct  Stops: Codable {
+struct DestinationServiceModel: Codable {
+    let address : String?
+    let point : PointServiceModel?
+}
+
+
+struct  StopsServiceModel: Codable {
     let id : Int?
-    let point : Point?
+    let point : PointServiceModel?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -36,10 +37,10 @@ struct  Stops: Codable {
 }
 
 // MARK: - Datum
-struct Trip: Codable {
+struct TripServiceModel: Codable {
     let description, driverName,endTime,startTime,status,route : String?
-    let destination, origin : Destination?
-    let stops : [Stops?]?
+    let destination, origin : DestinationServiceModel?
+    let stops : [StopsServiceModel?]?
     
 
     enum CodingKeys: String, CodingKey {

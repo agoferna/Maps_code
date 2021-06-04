@@ -22,7 +22,7 @@ enum ResponseType {
 class ApiRestManager {
 
     
-    static func getTripsService(_ completion: @escaping (([Trip]) -> Void),
+    static func getTripsService(_ completion: @escaping (([TripServiceModel]) -> Void),
                          _ completionError: @escaping ((AFError) -> Void)){
         
         let tripsServiceUrl = "https://europe-west1-metropolis-fe-test.cloudfunctions.net/api/trips"
@@ -30,12 +30,12 @@ class ApiRestManager {
             switch response.result {
 
             case .success(let json):
-                var tripsData : [Trip] = []
+                var tripsData : [TripServiceModel] = []
                 if let res = json as? [[String: Any]]{
                     for item in res{
                         do {
                              let data = try JSONSerialization.data(withJSONObject: item, options: [])
-                               let trip = try JSONDecoder().decode(Trip.self, from:data)
+                               let trip = try JSONDecoder().decode(TripServiceModel.self, from:data)
                             tripsData.append(trip)
                            } catch  {}
                     }

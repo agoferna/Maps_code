@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */; };
 		2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */; };
-		2808F7CA266A3E8D0099E1E7 /* Localizable.Strings in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7CC266A3E8D0099E1E7 /* Localizable.Strings */; };
+		2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7CC266A3E8D0099E1E7 /* Localizable.strings */; };
 		2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */; };
 		2839518F26679260001E1B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839518E26679260001E1B1A /* AppDelegate.swift */; };
 		2839519126679260001E1B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519026679260001E1B1A /* SceneDelegate.swift */; };
@@ -19,6 +19,7 @@
 		2839519B26679263001E1B1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2839519926679263001E1B1A /* LaunchScreen.storyboard */; };
 		283951A626679263001E1B1A /* Maps_codeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283951A526679263001E1B1A /* Maps_codeTests.swift */; };
 		283951B126679264001E1B1A /* Maps_codeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283951B026679264001E1B1A /* Maps_codeUITests.swift */; };
+		283CB3C0266A581F0092593D /* TripsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CB3BF266A581F0092593D /* TripsModel.swift */; };
 		286944DF26691C2E00FD98DF /* MapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286944DE26691C2E00FD98DF /* MapsViewModel.swift */; };
 		286944E726691E2500FD98DF /* TripsServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286944E626691E2500FD98DF /* TripsServiceModel.swift */; };
 		28901F332668D8ED00A051E8 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28901F322668D8ED00A051E8 /* MapsView.swift */; };
@@ -48,9 +49,9 @@
 /* Begin PBXFileReference section */
 		2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
-		2808F7CB266A3E8D0099E1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.Strings; sourceTree = "<group>"; };
+		2808F7CB266A3E8D0099E1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewDataSource.swift; sourceTree = "<group>"; };
-		2808F7D8266A4D440099E1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.Strings; sourceTree = "<group>"; };
+		2808F7D8266A4D440099E1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2839518B26679260001E1B1A /* Maps_code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps_code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2839518E26679260001E1B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2839519026679260001E1B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		283951AC26679264001E1B1A /* Maps_codeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Maps_codeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		283951B026679264001E1B1A /* Maps_codeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maps_codeUITests.swift; sourceTree = "<group>"; };
 		283951B226679264001E1B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		283CB3BF266A581F0092593D /* TripsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
 		286944DE26691C2E00FD98DF /* MapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewModel.swift; sourceTree = "<group>"; };
 		286944E626691E2500FD98DF /* TripsServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsServiceModel.swift; sourceTree = "<group>"; };
 		28901F322668D8ED00A051E8 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		2808F7C1266A3E590099E1E7 /* Localizable Strings */ = {
 			isa = PBXGroup;
 			children = (
-				2808F7CC266A3E8D0099E1E7 /* Localizable.Strings */,
+				2808F7CC266A3E8D0099E1E7 /* Localizable.strings */,
 			);
 			path = "Localizable Strings";
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				286944E626691E2500FD98DF /* TripsServiceModel.swift */,
+				283CB3BF266A581F0092593D /* TripsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -399,7 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2808F7CA266A3E8D0099E1E7 /* Localizable.Strings in Resources */,
+				2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */,
 				2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */,
 				2839519B26679263001E1B1A /* LaunchScreen.storyboard in Resources */,
 				2839519826679263001E1B1A /* Assets.xcassets in Resources */,
@@ -569,6 +572,7 @@
 				2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */,
 				28901F5426690D3800A051E8 /* ApiRestManager.swift in Sources */,
 				2839519326679260001E1B1A /* MapsViewController.swift in Sources */,
+				283CB3C0266A581F0092593D /* TripsModel.swift in Sources */,
 				28901F332668D8ED00A051E8 /* MapsView.swift in Sources */,
 				286944DF26691C2E00FD98DF /* MapsViewModel.swift in Sources */,
 				286944E726691E2500FD98DF /* TripsServiceModel.swift in Sources */,
@@ -609,13 +613,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2808F7CC266A3E8D0099E1E7 /* Localizable.Strings */ = {
+		2808F7CC266A3E8D0099E1E7 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2808F7CB266A3E8D0099E1E7 /* en */,
 				2808F7D8266A4D440099E1E7 /* Base */,
 			);
-			name = Localizable.Strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		2839519426679260001E1B1A /* MapsViewController.storyboard */ = {

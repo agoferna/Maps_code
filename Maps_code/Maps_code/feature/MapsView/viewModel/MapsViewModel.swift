@@ -27,9 +27,14 @@ class MapsViewModel : NSObject {
     
     func callFuncToGetTrips() {
         ApiRestManager.getTripsService({ (result) in
-            self.trips = result
+            var trips:  [Trip] = []
+            for  serviceTrip in result {
+                let trip = Trip.init(tripServiceModel: serviceTrip)
+                trips.append(trip)
+            }
+            self.trips = trips
         }, {(error) in
-                    
+            
         })
     }
 }
