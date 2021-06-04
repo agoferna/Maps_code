@@ -22,13 +22,20 @@ class TripsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.configureCellView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCellView(){
+        
+        originTitleLabel.text =  NSLocalizedString("Tips_Cell_Origin_Title", comment: "")
+        destinationTitleLabel.text =  NSLocalizedString("Tips_Cell_Destination_Title", comment: "")
+        statusTitleLabel.text =  NSLocalizedString("Tips_Cell_Status_Title", comment: "")
     }
     
 }
