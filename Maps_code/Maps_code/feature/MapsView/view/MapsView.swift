@@ -28,7 +28,6 @@ class MapsView: UIView {
         configureMapsView()
         configureTableView()
         self.delegate = delegate
-       // self.drawPolyLine(polyLine: <#T##String#>)
     }
     
     func configureMapsView(){
@@ -40,10 +39,13 @@ class MapsView: UIView {
         self.mapsTableView.delegate = self
     }
     
-//    func drawPolyLine(polyLine: String){
-//       let routePolyline = GMSPolyline(path: polyLine)
-//        routePolyline.map = mapsView
-//    }
+    func drawPolyLine(polyLine: GMSPolyline?){
+        if let finalPolyline = polyLine {
+            finalPolyline.strokeWidth = 2
+            finalPolyline.strokeColor = .red
+            finalPolyline.map = mapsView
+        }
+    }
     
     func addMarker(marker: GMSMarker){
         marker.map = mapsView

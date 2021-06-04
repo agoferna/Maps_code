@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import Polyline
 
 private struct Constants {
     static let cellName : String = "TripsTableViewCell"
@@ -56,7 +57,39 @@ class MapsViewController: UIViewController {
         }
     }
     
-    func configureMapStopsAndPolyline(selectedTrip: Int){
+    func configureMapWhenSelectRow(selectedTrip: Int){
+       
+        let markers = configureMapMarkers(selectedTrip: selectedTrip)
+        let polyline = configureMapPolyline(selectedTrip: selectedTrip)
+        if let view = self.view as? MapsView {
+            view.drawPolyLine(polyLine: polyline)
+            for marker in markers {
+                view.addMarker(marker: marker)
+            }
+        }
+    }
+    
+    func configureMapPolyline(selectedTrip: Int) -> GMSPolyline?{
+        var resultPolyline : GMSPolyline? = nil
+        if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
+            
+            let polyline = Polyline(encodedPolyline: trip.route ?? "")
+            if let decodedCoordinates = polyline.coordinates {
+            let path = GMSMutablePath()
+            
+            for coordinates in decodedCoordinates {
+                path.add(coordinates)
+            }
+            
+                resultPolyline = GMSPolyline(path: path)
+            }
+        }
+       return resultPolyline
+    }
+    
+    func configureMapMarkers(selectedTrip: Int) -> [GMSMarker]{
+        
+        var arrayOfMarkers : [GMSMarker] = []
         
         if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
             
@@ -68,19 +101,34 @@ class MapsViewController: UIViewController {
                     latitude: CLLocationDegrees.init(latitude),
                     longitude: CLLocationDegrees.init(longitude))
                 let marker = GMSMarker(position: position)
-                    
-                    if let view = self.view as? MapsView {
-                        view.addMarker(marker: marker)
-                    }
+                    arrayOfMarkers.append(marker)
                 }
             }
+            
+            if let startLatitude = trip.origin?.point?.latitude, let startLongitude = trip.origin?.point?.longitude {
+                let position = CLLocationCoordinate2D(
+                    latitude: CLLocationDegrees.init(startLatitude),
+                    longitude: CLLocationDegrees.init(startLongitude))
+                let marker = GMSMarker(position: position)
+                arrayOfMarkers.append(marker)
+            }
+            
+            if let destinationLatitude = trip.destination?.point?.latitude,
+               let destinationLongitude = trip.destination?.point?.longitude {
+                let position = CLLocationCoordinate2D(
+                    latitude: CLLocationDegrees.init(destinationLatitude),
+                    longitude: CLLocationDegrees.init(destinationLongitude))
+                let marker = GMSMarker(position: position)
+                arrayOfMarkers.append(marker)
+            }
         }
+        return arrayOfMarkers
     }
 }
 
 extension MapsViewController : MapsViewProtocol {
     func selectedRow(row: Int) {
-        self.configureMapStopsAndPolyline(selectedTrip: row)
+        self.configureMapWhenSelectRow(selectedTrip: row)
     }
 }
 
