@@ -1,0 +1,15 @@
+/* 
+  Localizable.Strings
+  Maps_code
+
+  Created by adrià gonzález fernández on 04/06/2021.
+  
+*/
+
+// TripsTableViewCell
+
+"Tips_Cell_Origin_Title" = "Origin:";
+"Tips_Cell_Destination_Title" = "Destination:";
+"Tips_Cell_Status_Title" = "Status:";
+
+
