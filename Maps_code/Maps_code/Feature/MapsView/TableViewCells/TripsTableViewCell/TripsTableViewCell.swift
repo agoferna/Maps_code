@@ -39,9 +39,9 @@ class TripsTableViewCell: UITableViewCell {
     
     func configureCellView(){
         
-        originTitleLabel.text =  NSLocalizedString("Tips_Cell_Origin_Title", comment: "")
-        destinationTitleLabel.text =  NSLocalizedString("Tips_Cell_Destination_Title", comment: "")
-        statusTitleLabel.text =  NSLocalizedString("Tips_Cell_Status_Title", comment: "")
+        originTitleLabel.text =  NSLocalizedString("Trips_Cell_Origin_Title", comment: "")
+        destinationTitleLabel.text =  NSLocalizedString("Trips_Cell_Destination_Title", comment: "")
+        statusTitleLabel.text =  NSLocalizedString("Trips_Cell_Status_Title", comment: "")
     }
     
 }
