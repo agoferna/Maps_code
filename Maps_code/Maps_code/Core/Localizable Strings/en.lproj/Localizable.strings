@@ -13,7 +13,6 @@
 "Trips_Cell_Status_Title" = "Status:";
 
 //MarkerView
-
 "Map_Marker_Passenger_Title" = "Name";
 "Map_Marker_StopTime_Title" = "Stop time";
 "Map_Marker_Price_Title" = "Price";
