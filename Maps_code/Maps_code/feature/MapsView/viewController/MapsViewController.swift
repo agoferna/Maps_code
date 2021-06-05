@@ -94,7 +94,9 @@ class MapsViewController: UIViewController {
         if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
             for stop in trip.stops {
                 if let marker = createMarker(point: stop?.point){
-                    marker.setValue(stop?.id, forKey: Constants.markerId)
+                    if let id = stop?.id {
+                        marker.userData = id
+                    }
                     arrayOfMarkers.append(marker)
                 }
             }
@@ -125,7 +127,7 @@ extension MapsViewController : MapsViewProtocol {
     }
     
     func selectedMarker(markerId: Int){
-        
+        mapsViewModel.callFuncToGetStopInfo(stopId: markerId)
     }
 }
 

@@ -38,6 +38,15 @@ class MapsViewModel : NSObject {
         })
     }
     
+    func callFuncToGetStopInfo(stopId : Int) {
+        ApiRestManager.getStopsInfo(stopId: "\(stopId)",
+                                    { (result) in
+                    print(result)          
+        }, {(error) in
+            
+        })
+    }
+    
     func getTrip(tripIndex: Int) ->  Trip? {
         if tripIndex < trips.count {
             return trips[tripIndex]

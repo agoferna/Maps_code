@@ -10,6 +10,7 @@ import GoogleMaps
 
 private struct Constants {
     static let cellID : String = "TripsTableViewCell"
+    static let markerId : String = "id"
 }
 
 protocol MapsViewProtocol {
@@ -92,6 +93,9 @@ extension MapsView: GMSMapViewDelegate {
         marker.icon = GMSMarker.markerImage(with: UIColor.green)
 
         // tap event handled by delegate
+        if let id =  marker.userData as? Int {
+            self.delegate?.selectedMarker(markerId: id)
+        }
         return true
     }
 }

@@ -14,6 +14,10 @@
 		282813C4266A7BA600D9CEBA /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 282813C3266A7BA600D9CEBA /* Polyline */; };
 		282813CC266B7E0E00D9CEBA /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282813CB266B7E0E00D9CEBA /* MarkerView.swift */; };
 		282813D1266B7E1C00D9CEBA /* MarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282813D0266B7E1C00D9CEBA /* MarkerView.xib */; };
+		282813E9266B91E300D9CEBA /* RestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282813E8266B91E300D9CEBA /* RestConfiguration.swift */; };
+		282813F6266B932F00D9CEBA /* StopServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282813F5266B932F00D9CEBA /* StopServiceModel.swift */; };
+		282813FB266B957F00D9CEBA /* StopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282813FA266B957F00D9CEBA /* StopModel.swift */; };
+		28281401266B96D100D9CEBA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28281400266B96D100D9CEBA /* DateExtension.swift */; };
 		2839518F26679260001E1B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839518E26679260001E1B1A /* AppDelegate.swift */; };
 		2839519126679260001E1B1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519026679260001E1B1A /* SceneDelegate.swift */; };
 		2839519326679260001E1B1A /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839519226679260001E1B1A /* MapsViewController.swift */; };
@@ -57,6 +61,10 @@
 		2808F7D8266A4D440099E1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		282813CB266B7E0E00D9CEBA /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		282813D0266B7E1C00D9CEBA /* MarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerView.xib; sourceTree = "<group>"; };
+		282813E8266B91E300D9CEBA /* RestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestConfiguration.swift; sourceTree = "<group>"; };
+		282813F5266B932F00D9CEBA /* StopServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopServiceModel.swift; sourceTree = "<group>"; };
+		282813FA266B957F00D9CEBA /* StopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopModel.swift; sourceTree = "<group>"; };
+		28281400266B96D100D9CEBA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2839518B26679260001E1B1A /* Maps_code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps_code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2839518E26679260001E1B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2839519026679260001E1B1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +149,14 @@
 			path = "Localizable Strings";
 			sourceTree = "<group>";
 		};
+		282813FF266B96B100D9CEBA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				28281400266B96D100D9CEBA /* DateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		283951822667925F001E1B1A = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +224,8 @@
 			children = (
 				286944E626691E2500FD98DF /* TripsServiceModel.swift */,
 				283CB3BF266A581F0092593D /* TripsModel.swift */,
+				282813F5266B932F00D9CEBA /* StopServiceModel.swift */,
+				282813FA266B957F00D9CEBA /* StopModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +281,7 @@
 		28901F4B26690D1300A051E8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				282813FF266B96B100D9CEBA /* Extension */,
 				2808F7C1266A3E590099E1E7 /* Localizable Strings */,
 				28901F4F26690D1F00A051E8 /* Services */,
 			);
@@ -273,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				28901F5326690D3800A051E8 /* ApiRestManager.swift */,
+				282813E8266B91E300D9CEBA /* RestConfiguration.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -584,9 +604,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */,
+				28281401266B96D100D9CEBA /* DateExtension.swift in Sources */,
 				2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */,
 				28901F5426690D3800A051E8 /* ApiRestManager.swift in Sources */,
 				2839519326679260001E1B1A /* MapsViewController.swift in Sources */,
+				282813F6266B932F00D9CEBA /* StopServiceModel.swift in Sources */,
+				282813E9266B91E300D9CEBA /* RestConfiguration.swift in Sources */,
 				283CB3C0266A581F0092593D /* TripsModel.swift in Sources */,
 				28901F332668D8ED00A051E8 /* MapsView.swift in Sources */,
 				282813CC266B7E0E00D9CEBA /* MarkerView.swift in Sources */,
@@ -594,6 +617,7 @@
 				286944E726691E2500FD98DF /* TripsServiceModel.swift in Sources */,
 				2839518F26679260001E1B1A /* AppDelegate.swift in Sources */,
 				2839519126679260001E1B1A /* SceneDelegate.swift in Sources */,
+				282813FB266B957F00D9CEBA /* StopModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
