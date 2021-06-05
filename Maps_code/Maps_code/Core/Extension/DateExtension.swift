@@ -7,12 +7,13 @@
 
 import Foundation
 
-extension DateFormatter {
+extension Date {
     
-    func getDateFromStringTimeStamp(timeStamp : String) -> Date?{
-
-        self.locale = Locale(identifier: "en_US_POSIX")
-        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return self.date(from: timeStamp)
+    func getHourMinuteString() -> String{
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: self)
+        let min = calendar.component(.minute, from: self)
+        
+        return "\(hour):\(min)"
     }
 }
