@@ -31,6 +31,9 @@ class MapsViewController: UIViewController {
         self.mapsViewModel.bindEmployeeViewModelToController = {
             self.configureTableViewDataSource()
         }
+        self.mapsViewModel.bindMarkerView = {
+            self.showStopDataFromMarker()
+        }
     }
     
     func configureMap(){        
@@ -118,6 +121,20 @@ class MapsViewController: UIViewController {
             longitude: CLLocationDegrees.init(longitude))
         
        return GMSMarker(position: position)
+    }
+    
+    func showStopDataFromMarker(){
+        if let view = self.view as? MapsView {
+            let stop = self.mapsViewModel.stop
+            
+            let stopTime = stop?.stopTime?.getHourMinuteString() ?? ""
+            let price = stop?.price?.getCurrency() ?? ""
+        
+            view.addMarkerViewInformation(stationName: stop?.address ?? "",
+                                          passenger: stop?.userName ?? "",
+                                          time: stopTime,
+                                          price: price)
+        }
     }
 }
 

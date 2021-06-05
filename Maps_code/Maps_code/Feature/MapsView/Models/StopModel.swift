@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StopModel {
+struct Stop {
     let address,userName : String?
     let paid : Bool?
     let tripId: Int?
