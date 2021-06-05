@@ -6,8 +6,11 @@
   
 */
 
-// TripsTableViewCell
+//MapsView
 
+"MapsView_Navigation_Title" = "Select your Trip";
+
+// TripsTableViewCell
 "Trips_Cell_Origin_Title" = "Origin:";
 "Trips_Cell_Destination_Title" = "Destination:";
 "Trips_Cell_Status_Title" = "Status:";

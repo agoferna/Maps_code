@@ -12,6 +12,7 @@ import Polyline
 private struct Constants {
     static let cellName : String = "TripsTableViewCell"
     static let markerId : String = "id"
+    static let reportImage : String = "report"
 }
 
 class MapsViewController: UIViewController {
@@ -22,6 +23,7 @@ class MapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMap()
+        configureNavBar()
         callToViewModelForUIUpdate()
 
     }
@@ -40,6 +42,20 @@ class MapsViewController: UIViewController {
         if let view = self.view as? MapsView {
             view.configureView(delegate: self)
         }
+    }
+    
+    func configureNavBar(){
+        let report = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(reportTapped))
+        let itemView = ReportBarButtonItemView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        itemView.configureView(numberOfReports: "0")
+        report.customView = itemView
+        self.navigationItem.rightBarButtonItem = report
+        
+        self.navigationItem.title =  NSLocalizedString("MapsView_Navigation_Title", comment: "")
+    }
+    
+    @objc func reportTapped() {
+        
     }
     
     func configureTableViewDataSource(){

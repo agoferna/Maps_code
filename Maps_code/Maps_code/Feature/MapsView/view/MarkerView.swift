@@ -46,10 +46,7 @@ class MarkerView: UIView {
         super.awakeFromNib()
         self.configureView()
     }
-    
-    class func instanceFromNib() -> UIView {
-        return UINib(nibName: "MarkerView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
-    }
+
     
     func configureData(stationName: String,
                        passengerName: String,
