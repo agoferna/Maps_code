@@ -6,8 +6,9 @@
   
 */
 
-//MapsView
 
+
+//MapsView
 "MapsView_Navigation_Title" = "Select your Trip";
 
 // TripsTableViewCell
@@ -20,4 +21,7 @@
 "Map_Marker_StopTime_Title" = "Stop time";
 "Map_Marker_Price_Title" = "Price";
 
+//Commons
+
+"Common_Required_field" = "Required field";
 
