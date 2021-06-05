@@ -21,7 +21,16 @@
 "Map_Marker_StopTime_Title" = "Stop time";
 "Map_Marker_Price_Title" = "Price";
 
+//Report View
+
+"Report_Name_TextField_Placeholder" = "Name";
+"Report_Surname_TextField_Placeholder" = "Surname";
+"Report_Phone_TextField_Placeholder" = "Phone Number";
+"Report_Email_TextField_Placeholder" = "Email";
+"Report_Date_TextField_Placeholder" = "Report Date";
+"Report_Description_Title" = "Description Report";
+
 //Commons
 
-"Common_Required_field" = "Required field";
+"Common_Required_field" = "*Required field";
 
