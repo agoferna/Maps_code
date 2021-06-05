@@ -12,6 +12,9 @@
 		280873C5266BE2E90086BAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873C4266BE2E90086BAC6 /* CustomTextField.swift */; };
 		280873CD266BE2F90086BAC6 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280873CC266BE2F90086BAC6 /* CustomTextField.xib */; };
 		280873D2266BE63C0086BAC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873D1266BE63C0086BAC6 /* StringExtension.swift */; };
+		280873D7266BE9A80086BAC6 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873D6266BE9A80086BAC6 /* ReportView.swift */; };
+		280873DC266BE9EB0086BAC6 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873DB266BE9EB0086BAC6 /* ReportViewController.swift */; };
+		280873E1266BEF710086BAC6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */; };
 		2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */; };
 		2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */; };
 		2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7CC266A3E8D0099E1E7 /* Localizable.strings */; };
@@ -66,6 +69,9 @@
 		280873C4266BE2E90086BAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		280873CC266BE2F90086BAC6 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		280873D1266BE63C0086BAC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		280873D6266BE9A80086BAC6 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		280873DB266BE9EB0086BAC6 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
 		2808F7CB266A3E8D0099E1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				28281405266BBD2200D9CEBA /* DateExtension.swift */,
 				2828140D266BBF6E00D9CEBA /* DoubleExtension.swift */,
 				280873D1266BE63C0086BAC6 /* StringExtension.swift */,
+				280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -288,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				2839519226679260001E1B1A /* MapsViewController.swift */,
+				280873DB266BE9EB0086BAC6 /* ReportViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 				282813D0266B7E1C00D9CEBA /* MarkerView.xib */,
 				280873B8266BDABE0086BAC6 /* ReportBarButtonItemView.swift */,
 				280873BD266BDACA0086BAC6 /* ReportBarButtonItemView.xib */,
+				280873D6266BE9A80086BAC6 /* ReportView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -646,13 +655,16 @@
 				2828140E266BBF6E00D9CEBA /* DoubleExtension.swift in Sources */,
 				28281401266B96D100D9CEBA /* DateFormatterExtension.swift in Sources */,
 				2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */,
+				280873DC266BE9EB0086BAC6 /* ReportViewController.swift in Sources */,
 				28901F5426690D3800A051E8 /* ApiRestManager.swift in Sources */,
 				280873C5266BE2E90086BAC6 /* CustomTextField.swift in Sources */,
+				280873E1266BEF710086BAC6 /* UIViewControllerExtension.swift in Sources */,
 				2839519326679260001E1B1A /* MapsViewController.swift in Sources */,
 				282813F6266B932F00D9CEBA /* StopServiceModel.swift in Sources */,
 				280873B9266BDABE0086BAC6 /* ReportBarButtonItemView.swift in Sources */,
 				282813E9266B91E300D9CEBA /* RestConfiguration.swift in Sources */,
 				283CB3C0266A581F0092593D /* TripsModel.swift in Sources */,
+				280873D7266BE9A80086BAC6 /* ReportView.swift in Sources */,
 				28901F332668D8ED00A051E8 /* MapsView.swift in Sources */,
 				280873D2266BE63C0086BAC6 /* StringExtension.swift in Sources */,
 				28281406266BBD2200D9CEBA /* DateExtension.swift in Sources */,

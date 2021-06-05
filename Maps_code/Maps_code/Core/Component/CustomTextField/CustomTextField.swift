@@ -22,6 +22,7 @@ class CustomTextField: UIView {
     @IBOutlet weak var textField: UITextField!
     
     var typeOfTextField : typeOftextField?
+    var datePiker : UIDatePicker?
     
     //MARK: - Life Cycle
     required init?(coder aDecoder: NSCoder) {
@@ -58,7 +59,27 @@ class CustomTextField: UIView {
         textField.placeholder = placeHolder
         self.typeOfTextField = typeOfInfo
         self.requiredFieldView.isHidden = !isRequired
+        
+        switch typeOfInfo {
+        case .date:
+            self.datePiker = UIDatePicker()
+            self.datePiker?.datePickerMode = .dateAndTime
+            self.datePiker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
+            
+            textField.inputView = datePiker
+        case .phone:
+            textField.keyboardType = .numberPad
+        default:
+            break
+        }
     }
+
+@objc func dateChanged(datePicker: UIDatePicker){
+    
+    let dateFormmater = DateFormatter()
+    dateFormmater.dateFormat = "dd/MM/yyyy - HH:mm"
+    textField.text = dateFormmater.string(from: datePicker.date)
+}
     
     func validateTextField() -> Bool{
         var response = false
@@ -68,13 +89,17 @@ class CustomTextField: UIView {
             return false
         }
         
-        switch typeOfTextField {
-        case .phone:
-            response = text.isValidPhone()
-        case .email:
-            response = text.isValidEmail()
-        default:
-            response = !text.isEmpty
+        if requiredFieldView.isHidden && text.isEmpty {
+            response = true
+        } else {
+            switch typeOfTextField {
+            case .phone:
+                response = text.isValidPhone()
+            case .email:
+                response = text.isValidEmail()
+            default:
+                response = !requiredFieldView.isHidden ? !text.isEmpty : true
+            }
         }
         self.setErrorTextfield(setError: !response)
         return response
@@ -86,4 +111,6 @@ class CustomTextField: UIView {
         requiredFieldLabel.textColor = setError ?  UIColor.red :  UIColor.black
         
     }
+    
+    
 }

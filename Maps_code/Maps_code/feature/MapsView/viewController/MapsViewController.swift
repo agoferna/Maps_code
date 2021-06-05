@@ -45,9 +45,11 @@ class MapsViewController: UIViewController {
     }
     
     func configureNavBar(){
-        let report = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(reportTapped))
+        let report = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(self.reportTapped))
         let itemView = ReportBarButtonItemView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         itemView.configureView(numberOfReports: "0")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.reportTapped))
+        itemView.addGestureRecognizer(tap)
         report.customView = itemView
         self.navigationItem.rightBarButtonItem = report
         
@@ -55,7 +57,8 @@ class MapsViewController: UIViewController {
     }
     
     @objc func reportTapped() {
-        
+        let vc = UIStoryboard.init(name: "MapsViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReportViewController") as? ReportViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func configureTableViewDataSource(){
