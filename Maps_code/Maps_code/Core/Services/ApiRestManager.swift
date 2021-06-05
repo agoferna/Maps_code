@@ -25,7 +25,7 @@ class ApiRestManager {
     static func getTripsService(_ completion: @escaping (([TripServiceModel]) -> Void),
                          _ completionError: @escaping ((AFError) -> Void)){
         
-        let tripsServiceUrl = "https://europe-west1-metropolis-fe-test.cloudfunctions.net/api/trips"
+        let tripsServiceUrl = RestConfiguration.TripsServiceEndPoint
         AF.request(tripsServiceUrl,method: .get).responseJSON(completionHandler: { response in
             switch response.result {
 
@@ -40,6 +40,31 @@ class ApiRestManager {
                            } catch  {}
                     }
                     completion(tripsData)
+               }
+            case .failure(let error):
+                completionError(error)
+            }
+        })
+        }
+    
+    
+    static func getStopsInfo(stopId: String,
+                             _ completion: @escaping ((StopServiceModel?) -> Void),
+                         _ completionError: @escaping ((AFError) -> Void)){
+        
+        let stopsServiceUrl = RestConfiguration().composeStopServiceEndPoint(stopId)
+        AF.request(stopsServiceUrl,
+                   method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+
+            case .success(let json):
+                var stopData : StopServiceModel?
+                if let res = json as? [String: Any]{
+                        do {
+                             let data = try JSONSerialization.data(withJSONObject: res, options: [])
+                            stopData = try JSONDecoder().decode(StopServiceModel.self, from:data)
+                           } catch  {}
+                    completion(stopData)
                }
             case .failure(let error):
                 completionError(error)

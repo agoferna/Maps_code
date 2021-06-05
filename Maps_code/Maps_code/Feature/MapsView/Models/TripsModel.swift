@@ -62,23 +62,16 @@ struct Trip {
         self.destination = Destination.init(desServiceModel: tripServiceModel.destination)
         self.origin = Destination.init(desServiceModel: tripServiceModel.origin)
         
-        
         if let status =  tripServiceModel.status {
             self.status = TripStatus(rawValue: status)
         }
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        
         if let endTripTime = tripServiceModel.endTime {
-            let endDate = dateFormatter.date(from: endTripTime)
-            self.endTime = endDate
+            self.endTime = DateFormatter().getDateFromStringTimeStamp(timeStamp: endTripTime)
         }
         
         if let startTripTime = tripServiceModel.startTime {
-            let startDate = dateFormatter.date(from: startTripTime)
-            self.startTime = startDate
+            self.startTime = DateFormatter().getDateFromStringTimeStamp(timeStamp: startTripTime)
         }
         
         if let serviceStopsArray = tripServiceModel.stops {

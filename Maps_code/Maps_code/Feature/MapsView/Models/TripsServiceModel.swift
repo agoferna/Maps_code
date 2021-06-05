@@ -36,7 +36,6 @@ struct  StopsServiceModel: Codable {
     }
 }
 
-// MARK: - Datum
 struct TripServiceModel: Codable {
     let description, driverName,endTime,startTime,status,route : String?
     let destination, origin : DestinationServiceModel?

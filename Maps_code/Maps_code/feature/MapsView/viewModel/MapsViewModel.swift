@@ -18,7 +18,14 @@ class MapsViewModel : NSObject {
         }
     }
     
+    private(set) var stop : Stop? {
+        didSet {
+            self.bindMarkerView()
+        }
+    }
+    
     var bindEmployeeViewModelToController : (() -> ()) = {}
+    var bindMarkerView: (() -> ()) = {}
     
     override init() {
         super.init()
@@ -36,6 +43,17 @@ class MapsViewModel : NSObject {
         }, {(error) in
             
         })
+    }
+    
+    func callFuncToGetStopInfo(stopId : Int) {
+        ApiRestManager.getStopsInfo(stopId: "\(stopId)",
+                                    { (result) in
+                                        if let stopServiceModel = result {
+                                            self.stop = Stop.init(stopServiceModel: stopServiceModel)
+                                        }
+                                    }, {(error) in
+                                        
+                                    })
     }
     
     func getTrip(tripIndex: Int) ->  Trip? {
