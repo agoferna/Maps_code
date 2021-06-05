@@ -11,6 +11,7 @@ import Polyline
 
 private struct Constants {
     static let cellName : String = "TripsTableViewCell"
+    static let markerId : String = "id"
 }
 
 class MapsViewController: UIViewController {
@@ -90,45 +91,41 @@ class MapsViewController: UIViewController {
     func configureMapMarkers(selectedTrip: Int) -> [GMSMarker]{
         
         var arrayOfMarkers : [GMSMarker] = []
-        
         if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
-            
             for stop in trip.stops {
-            
-                if let latitude = stop?.point?.latitude, let longitude = stop?.point?.longitude {
-                
-                let position = CLLocationCoordinate2D(
-                    latitude: CLLocationDegrees.init(latitude),
-                    longitude: CLLocationDegrees.init(longitude))
-                let marker = GMSMarker(position: position)
+                if let marker = createMarker(point: stop?.point){
+                    marker.setValue(stop?.id, forKey: Constants.markerId)
                     arrayOfMarkers.append(marker)
                 }
             }
-            
-            if let startLatitude = trip.origin?.point?.latitude, let startLongitude = trip.origin?.point?.longitude {
-                let position = CLLocationCoordinate2D(
-                    latitude: CLLocationDegrees.init(startLatitude),
-                    longitude: CLLocationDegrees.init(startLongitude))
-                let marker = GMSMarker(position: position)
+            if let marker = createMarker(point: trip.origin?.point){
                 arrayOfMarkers.append(marker)
             }
-            
-            if let destinationLatitude = trip.destination?.point?.latitude,
-               let destinationLongitude = trip.destination?.point?.longitude {
-                let position = CLLocationCoordinate2D(
-                    latitude: CLLocationDegrees.init(destinationLatitude),
-                    longitude: CLLocationDegrees.init(destinationLongitude))
-                let marker = GMSMarker(position: position)
+            if let marker = createMarker(point: trip.destination?.point){
                 arrayOfMarkers.append(marker)
             }
         }
         return arrayOfMarkers
+    }
+    
+    func createMarker(point: Point?) -> GMSMarker? {
+        guard let latitude = point?.latitude, let longitude = point?.longitude else {return nil}
+    
+        let position = CLLocationCoordinate2D(
+            latitude: CLLocationDegrees.init(latitude),
+            longitude: CLLocationDegrees.init(longitude))
+        
+       return GMSMarker(position: position)
     }
 }
 
 extension MapsViewController : MapsViewProtocol {
     func selectedRow(row: Int) {
         self.configureMapWhenSelectRow(selectedTrip: row)
+    }
+    
+    func selectedMarker(markerId: Int){
+        
     }
 }
 

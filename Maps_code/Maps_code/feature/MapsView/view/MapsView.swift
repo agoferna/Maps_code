@@ -14,6 +14,7 @@ private struct Constants {
 
 protocol MapsViewProtocol {
     func selectedRow(row: Int)
+    func selectedMarker(markerId: Int)
 }
 
 
@@ -32,6 +33,7 @@ class MapsView: UIView {
     
     func configureMapsView(){
         mapsView.mapType = .normal
+        mapsView.delegate = self
     }
     
     func configureTableView(){
@@ -70,5 +72,26 @@ extension MapsView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         deleteMarkers()
         self.delegate?.selectedRow(row: indexPath.row)
+    }
+}
+
+extension MapsView: GMSMapViewDelegate {
+
+    // tap map marker
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        print("didTap marker \(marker.title)")
+
+        // remove color from currently selected marker
+        if let selectedMarker = mapView.selectedMarker {
+            selectedMarker.icon = GMSMarker.markerImage(with: nil)
+        }
+
+        // select new marker and make green
+        mapView.selectedMarker = marker
+        marker.icon = GMSMarker.markerImage(with: UIColor.green)
+
+        // tap event handled by delegate
+        return true
     }
 }
