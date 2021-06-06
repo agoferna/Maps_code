@@ -68,14 +68,14 @@ class ReportView: UIView {
 
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
         let keyboardViewEndFrame = self.convert(keyboardScreenEndFrame, from: self.window)
-        
+
         if notification.name == UIResponder.keyboardWillHideNotification {
             scrollView.contentInset = .zero
         } else {
-            scrollView.contentInset = .zero
             scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - self.safeAreaInsets.bottom, right: 0)
         }
-        self.reloadInputViews()
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
     @IBAction func submitAction(_ sender: Any) {
