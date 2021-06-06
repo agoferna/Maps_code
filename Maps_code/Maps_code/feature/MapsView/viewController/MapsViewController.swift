@@ -61,7 +61,7 @@ class MapsViewController: UIViewController {
     }
     
     @objc func reportTapped() {
-        let vc = UIStoryboard.init(name: "MapsViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReportViewController") as? ReportViewController
+        let vc = UIStoryboard.init(name: "Maps", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReportViewController") as? ReportViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -85,22 +85,22 @@ class MapsViewController: UIViewController {
     }
     
     func configureMapWhenSelectRow(selectedTrip: Int){
-       
-        let markers = configureMapMarkers(selectedTrip: selectedTrip)
-        let path = configureMapPolyline(selectedTrip: selectedTrip)
-        if let view = self.view as? MapsView {
-            view.drawPolyLine(path: path)
-            view.zoomMap(path: path)
-            for marker in markers {
-                view.addMarker(marker: marker)
+        
+        if let trip =  mapsViewModel.getTrip(tripIndex: selectedTrip) {
+            let markers = configureMapMarkers(trip: trip)
+            let path = configureMapPolyline(trip: trip)
+            if let view = self.view as? MapsView {
+                view.drawPolyLine(path: path)
+                view.zoomMap(path: path)
+                for marker in markers {
+                    view.addMarker(marker: marker)
+                }
             }
         }
     }
     
-    func configureMapPolyline(selectedTrip: Int) -> GMSMutablePath?{
+    func configureMapPolyline(trip: Trip) -> GMSMutablePath?{
         var resultPolyline : GMSMutablePath? = nil
-        if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
-            
             let polyline = Polyline(encodedPolyline: trip.route ?? "")
             if let decodedCoordinates = polyline.coordinates {
                 let path = GMSMutablePath()
@@ -110,14 +110,11 @@ class MapsViewController: UIViewController {
                 }
                 resultPolyline = path
             }
-        }
         return resultPolyline
     }
     
-    func configureMapMarkers(selectedTrip: Int) -> [GMSMarker]{
-        
+    func configureMapMarkers(trip: Trip) -> [GMSMarker]{
         var arrayOfMarkers : [GMSMarker] = []
-        if let trip = mapsViewModel.getTrip(tripIndex: selectedTrip) {
             for stop in trip.stops {
                 if let marker = createMarker(point: stop?.point){
                     if let id = stop?.id {
@@ -125,7 +122,6 @@ class MapsViewController: UIViewController {
                     }
                     arrayOfMarkers.append(marker)
                 }
-            }
             if let marker = createMarker(point: trip.origin?.point){
                 arrayOfMarkers.append(marker)
             }
