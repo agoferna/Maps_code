@@ -52,10 +52,8 @@ class ReportRealmModel: Object {
 
     func incrementID() -> Int{
         let realm = try! Realm()
-         if let reportId = realm.objects(ReportRealmModel.self).sorted(byKeyPath: "id").first?.id {
-             return reportId + 1
-         }else{
-             return 0
-         }
+        let reportId = realm.objects(ReportRealmModel.self)
+        let maxId = reportId.map{$0.id}.max() ?? -1
+        return maxId + 1
     }
 }
