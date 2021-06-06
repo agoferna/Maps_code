@@ -106,6 +106,7 @@ extension MapsView: GMSMapViewDelegate {
         }
         mapView.selectedMarker = marker
        
+        mapView.moveCamera(GMSCameraUpdate.setCamera(GMSCameraPosition(latitude: marker.position.latitude, longitude: marker.position.longitude, zoom: 10.5)))
 
         // tap event handled by delegate
         if let id =  marker.userData as? Int {
