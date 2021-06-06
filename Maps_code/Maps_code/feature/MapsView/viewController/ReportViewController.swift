@@ -20,10 +20,16 @@ class ReportViewController: UIViewController {
     func configureView(){
         self.hideKeyboardWhenTappedAround() 
         configureTextFields()
+        configureNavigationBar()
     }
     
     func configureViewModel(){
         self.reportViewModel =  ReportViewModel()
+    }
+    
+    func configureNavigationBar(){
+        self.navigationItem.leftBarButtonItem?.title = ""
+        self.navigationItem.title =  NSLocalizedString("Report_Navigation_Title", comment: "")
     }
     
     func configureTextFields(){
@@ -53,5 +59,6 @@ extension  ReportViewController : nameReportViewProtocol{
                             description: description)
         
         self.reportViewModel.saveReportRealmModel(report: report)
+        self.navigationController?.popViewController(animated: true)
     }
 }

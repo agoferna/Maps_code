@@ -50,6 +50,7 @@ class ReportView: UIView {
         dateTextField.configureTextField(placeHolder: dateText, typeOfInfo: .date, isRequired: true)
         descriptionLabelTitle.text = NSLocalizedString("Report_Description_Title", comment: "")
         requiredFieldLabel.text = NSLocalizedString("Common_Required_field", comment: "")
+        submitButton.setTitle(NSLocalizedString("Report_Button_Title", comment: ""), for: .normal)
     }
     
     func setTextFieldError(setError: Bool){
