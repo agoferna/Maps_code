@@ -5,11 +5,29 @@
   Created by adrià gonzález fernández on 04/06/2021.
   
 */
+//MapsView
+"MapsView_Navigation_Title" = "Select your Trip";
 
 // TripsTableViewCell
+"Trips_Cell_Origin_Title" = "Origin:";
+"Trips_Cell_Destination_Title" = "Destination:";
+"Trips_Cell_Status_Title" = "Status:";
 
-"Tips_Cell_Origin_Title" = "Origin:";
-"Tips_Cell_Destination_Title" = "Destination:";
-"Tips_Cell_Status_Title" = "Status:";
+//MarkerView
+"Map_Marker_Passenger_Title" = "Name";
+"Map_Marker_StopTime_Title" = "Stop time";
+"Map_Marker_Price_Title" = "Price";
 
+//Report View
+"Report_Navigation_Title" = "Send Report";
+"Report_Name_TextField_Placeholder" = "Name";
+"Report_Surname_TextField_Placeholder" = "Surname";
+"Report_Phone_TextField_Placeholder" = "Phone Number";
+"Report_Email_TextField_Placeholder" = "Email";
+"Report_Date_TextField_Placeholder" = "Report Date";
+"Report_Description_Title" = "Description Report";
+"Report_Button_Title" = "Send Report";
+
+//Commons
+"Common_Required_field" = "*Required field";
 

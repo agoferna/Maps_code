@@ -15,4 +15,18 @@ extension DateFormatter {
         self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return self.date(from: timeStamp)
     }
+    
+    func getDateFromStringTextField(dateString: String) -> Date?{
+
+        let dateFormmater = DateFormatter()
+        dateFormmater.dateFormat = "dd/MM/yyyy - HH:mm"
+        return dateFormmater.date(from: dateString)
+    }
+    
+    func getStringFromDateTextField(date: Date) -> String?{
+
+        let dateFormmater = DateFormatter()
+        dateFormmater.dateFormat = "dd/MM/yyyy - HH:mm"
+        return dateFormmater.string(from: date)
+    }
 }

@@ -12,6 +12,7 @@ import Polyline
 private struct Constants {
     static let cellName : String = "TripsTableViewCell"
     static let markerId : String = "id"
+    static let reportImage : String = "report"
 }
 
 class MapsViewController: UIViewController {
@@ -22,8 +23,13 @@ class MapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMap()
+        configureNavBar()
         callToViewModelForUIUpdate()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavBar()
     }
     
     func callToViewModelForUIUpdate(){        
@@ -40,6 +46,23 @@ class MapsViewController: UIViewController {
         if let view = self.view as? MapsView {
             view.configureView(delegate: self)
         }
+    }
+    
+    func configureNavBar(){
+        let report = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(self.reportTapped))
+        let itemView = ReportBarButtonItemView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let numberOfReports = ReportRealmModel.numberOfReports()
+        itemView.configureView(numberOfReports: "\(numberOfReports)")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.reportTapped))
+        itemView.addGestureRecognizer(tap)
+        report.customView = itemView
+        self.navigationItem.rightBarButtonItem = report
+        self.navigationItem.title =  NSLocalizedString("MapsView_Navigation_Title", comment: "")
+    }
+    
+    @objc func reportTapped() {
+        let vc = UIStoryboard.init(name: "MapsViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReportViewController") as? ReportViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     func configureTableViewDataSource(){

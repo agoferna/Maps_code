@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-import Foundation
-
 class MapsViewModel : NSObject {
     
     private(set) var trips : [Trip] = [] {

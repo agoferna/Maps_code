@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280873B9266BDABE0086BAC6 /* ReportBarButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873B8266BDABE0086BAC6 /* ReportBarButtonItemView.swift */; };
+		280873BE266BDACA0086BAC6 /* ReportBarButtonItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280873BD266BDACA0086BAC6 /* ReportBarButtonItemView.xib */; };
+		280873C5266BE2E90086BAC6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873C4266BE2E90086BAC6 /* CustomTextField.swift */; };
+		280873CD266BE2F90086BAC6 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280873CC266BE2F90086BAC6 /* CustomTextField.xib */; };
+		280873D2266BE63C0086BAC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873D1266BE63C0086BAC6 /* StringExtension.swift */; };
+		280873D7266BE9A80086BAC6 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873D6266BE9A80086BAC6 /* ReportView.swift */; };
+		280873DC266BE9EB0086BAC6 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873DB266BE9EB0086BAC6 /* ReportViewController.swift */; };
+		280873E1266BEF710086BAC6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */; };
+		280873E7266CC40B0086BAC6 /* ReportRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280873E6266CC40B0086BAC6 /* ReportRealmModel.swift */; };
 		2808F7BC266A38DE0099E1E7 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */; };
 		2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */; };
 		2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2808F7CC266A3E8D0099E1E7 /* Localizable.strings */; };
 		2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */; };
+		2822B857266CD19600979718 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822B856266CD19600979718 /* ReportViewModel.swift */; };
+		2822B85C266CD2E300979718 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2822B85B266CD2E300979718 /* ReportModel.swift */; };
 		282813C4266A7BA600D9CEBA /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 282813C3266A7BA600D9CEBA /* Polyline */; };
 		282813CC266B7E0E00D9CEBA /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282813CB266B7E0E00D9CEBA /* MarkerView.swift */; };
 		282813D1266B7E1C00D9CEBA /* MarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282813D0266B7E1C00D9CEBA /* MarkerView.xib */; };
@@ -56,11 +67,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280873B8266BDABE0086BAC6 /* ReportBarButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBarButtonItemView.swift; sourceTree = "<group>"; };
+		280873BD266BDACA0086BAC6 /* ReportBarButtonItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportBarButtonItemView.xib; sourceTree = "<group>"; };
+		280873C4266BE2E90086BAC6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		280873CC266BE2F90086BAC6 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		280873D1266BE63C0086BAC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		280873D6266BE9A80086BAC6 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		280873DB266BE9EB0086BAC6 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		280873E6266CC40B0086BAC6 /* ReportRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRealmModel.swift; sourceTree = "<group>"; };
 		2808F7BA266A38DE0099E1E7 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		2808F7BB266A38DE0099E1E7 /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
 		2808F7CB266A3E8D0099E1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewDataSource.swift; sourceTree = "<group>"; };
 		2808F7D8266A4D440099E1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2822B856266CD19600979718 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		2822B85B266CD2E300979718 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		282813CB266B7E0E00D9CEBA /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		282813D0266B7E1C00D9CEBA /* MarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerView.xib; sourceTree = "<group>"; };
 		282813E8266B91E300D9CEBA /* RestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestConfiguration.swift; sourceTree = "<group>"; };
@@ -128,6 +150,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280873C2266BE2790086BAC6 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				280873C3266BE2840086BAC6 /* CustomTextField */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		280873C3266BE2840086BAC6 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				280873C4266BE2E90086BAC6 /* CustomTextField.swift */,
+				280873CC266BE2F90086BAC6 /* CustomTextField.xib */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		280873E5266CC3F30086BAC6 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				280873E6266CC40B0086BAC6 /* ReportRealmModel.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
 		2808F7B7266A387C0099E1E7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +206,8 @@
 				28281400266B96D100D9CEBA /* DateFormatterExtension.swift */,
 				28281405266BBD2200D9CEBA /* DateExtension.swift */,
 				2828140D266BBF6E00D9CEBA /* DoubleExtension.swift */,
+				280873D1266BE63C0086BAC6 /* StringExtension.swift */,
+				280873E0266BEF710086BAC6 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -232,6 +281,7 @@
 				283CB3BF266A581F0092593D /* TripsModel.swift */,
 				282813F5266B932F00D9CEBA /* StopServiceModel.swift */,
 				282813FA266B957F00D9CEBA /* StopModel.swift */,
+				2822B85B266CD2E300979718 /* ReportModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				2839519226679260001E1B1A /* MapsViewController.swift */,
+				280873DB266BE9EB0086BAC6 /* ReportViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -271,6 +322,9 @@
 				28901F322668D8ED00A051E8 /* MapsView.swift */,
 				282813CB266B7E0E00D9CEBA /* MarkerView.swift */,
 				282813D0266B7E1C00D9CEBA /* MarkerView.xib */,
+				280873B8266BDABE0086BAC6 /* ReportBarButtonItemView.swift */,
+				280873BD266BDACA0086BAC6 /* ReportBarButtonItemView.xib */,
+				280873D6266BE9A80086BAC6 /* ReportView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -280,6 +334,7 @@
 			children = (
 				286944DE26691C2E00FD98DF /* MapsViewModel.swift */,
 				2808F7D0266A423E0099E1E7 /* TripsTableViewDataSource.swift */,
+				2822B856266CD19600979718 /* ReportViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -287,6 +342,8 @@
 		28901F4B26690D1300A051E8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				280873E5266CC3F30086BAC6 /* RealmModels */,
+				280873C2266BE2790086BAC6 /* Component */,
 				282813FF266B96B100D9CEBA /* Extension */,
 				2808F7C1266A3E590099E1E7 /* Localizable Strings */,
 				28901F4F26690D1F00A051E8 /* Services */,
@@ -442,9 +499,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280873CD266BE2F90086BAC6 /* CustomTextField.xib in Resources */,
 				282813D1266B7E1C00D9CEBA /* MarkerView.xib in Resources */,
 				2808F7CA266A3E8D0099E1E7 /* Localizable.strings in Resources */,
 				2808F7BD266A38DE0099E1E7 /* TripsTableViewCell.xib in Resources */,
+				280873BE266BDACA0086BAC6 /* ReportBarButtonItemView.xib in Resources */,
 				2839519B26679263001E1B1A /* LaunchScreen.storyboard in Resources */,
 				2839519826679263001E1B1A /* Assets.xcassets in Resources */,
 				2839519626679260001E1B1A /* MapsViewController.storyboard in Resources */,
@@ -613,12 +672,19 @@
 				2828140E266BBF6E00D9CEBA /* DoubleExtension.swift in Sources */,
 				28281401266B96D100D9CEBA /* DateFormatterExtension.swift in Sources */,
 				2808F7D1266A423E0099E1E7 /* TripsTableViewDataSource.swift in Sources */,
+				280873DC266BE9EB0086BAC6 /* ReportViewController.swift in Sources */,
+				2822B85C266CD2E300979718 /* ReportModel.swift in Sources */,
 				28901F5426690D3800A051E8 /* ApiRestManager.swift in Sources */,
+				280873C5266BE2E90086BAC6 /* CustomTextField.swift in Sources */,
+				280873E1266BEF710086BAC6 /* UIViewControllerExtension.swift in Sources */,
 				2839519326679260001E1B1A /* MapsViewController.swift in Sources */,
 				282813F6266B932F00D9CEBA /* StopServiceModel.swift in Sources */,
+				280873B9266BDABE0086BAC6 /* ReportBarButtonItemView.swift in Sources */,
 				282813E9266B91E300D9CEBA /* RestConfiguration.swift in Sources */,
 				283CB3C0266A581F0092593D /* TripsModel.swift in Sources */,
+				280873D7266BE9A80086BAC6 /* ReportView.swift in Sources */,
 				28901F332668D8ED00A051E8 /* MapsView.swift in Sources */,
+				280873D2266BE63C0086BAC6 /* StringExtension.swift in Sources */,
 				28281406266BBD2200D9CEBA /* DateExtension.swift in Sources */,
 				282813CC266B7E0E00D9CEBA /* MarkerView.swift in Sources */,
 				286944DF26691C2E00FD98DF /* MapsViewModel.swift in Sources */,
@@ -626,6 +692,8 @@
 				2839518F26679260001E1B1A /* AppDelegate.swift in Sources */,
 				2839519126679260001E1B1A /* SceneDelegate.swift in Sources */,
 				282813FB266B957F00D9CEBA /* StopModel.swift in Sources */,
+				280873E7266CC40B0086BAC6 /* ReportRealmModel.swift in Sources */,
+				2822B857266CD19600979718 /* ReportViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
