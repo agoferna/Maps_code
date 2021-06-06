@@ -75,10 +75,7 @@ class CustomTextField: UIView {
     }
 
 @objc func dateChanged(datePicker: UIDatePicker){
-    
-    let dateFormmater = DateFormatter()
-    dateFormmater.dateFormat = "dd/MM/yyyy - HH:mm"
-    textField.text = dateFormmater.string(from: datePicker.date)
+    textField.text =  DateFormatter().getStringFromDateTextField(date: datePicker.date)
 }
     
     func validateTextField() -> Bool{
