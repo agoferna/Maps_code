@@ -11,7 +11,6 @@ import XCTest
 class DateExtension_codeTest: XCTestCase {
         
     func testT01_VC_getHourMinuteString() {
-        let date = Date()
         let hourAndMinute = Date().getHourMinuteString()
         XCTAssertNotNil(hourAndMinute)
     }

@@ -44,6 +44,9 @@
 		283951B126679264001E1B1A /* Maps_codeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283951B026679264001E1B1A /* Maps_codeUITests.swift */; };
 		283CB3C0266A581F0092593D /* TripsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283CB3BF266A581F0092593D /* TripsModel.swift */; };
 		2847D8A5266CFA7D002F866E /* ReportViewModel_codeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847D8A4266CFA7D002F866E /* ReportViewModel_codeTest.swift */; };
+		2847D8BC266CFFE8002F866E /* StopModel_codeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847D8BB266CFFE8002F866E /* StopModel_codeTest.swift */; };
+		2847D8C1266D0094002F866E /* ReportViewController_codeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847D8C0266D0094002F866E /* ReportViewController_codeTest.swift */; };
+		2847D8C7266D017F002F866E /* MarkerView_codeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847D8C6266D017F002F866E /* MarkerView_codeTest.swift */; };
 		286944DF26691C2E00FD98DF /* MapsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286944DE26691C2E00FD98DF /* MapsViewModel.swift */; };
 		286944E726691E2500FD98DF /* TripsServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286944E626691E2500FD98DF /* TripsServiceModel.swift */; };
 		28901F332668D8ED00A051E8 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28901F322668D8ED00A051E8 /* MapsView.swift */; };
@@ -115,6 +118,9 @@
 		283951B226679264001E1B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283CB3BF266A581F0092593D /* TripsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
 		2847D8A4266CFA7D002F866E /* ReportViewModel_codeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel_codeTest.swift; sourceTree = "<group>"; };
+		2847D8BB266CFFE8002F866E /* StopModel_codeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopModel_codeTest.swift; sourceTree = "<group>"; };
+		2847D8C0266D0094002F866E /* ReportViewController_codeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController_codeTest.swift; sourceTree = "<group>"; };
+		2847D8C6266D017F002F866E /* MarkerView_codeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView_codeTest.swift; sourceTree = "<group>"; };
 		286944DE26691C2E00FD98DF /* MapsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewModel.swift; sourceTree = "<group>"; };
 		286944E626691E2500FD98DF /* TripsServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsServiceModel.swift; sourceTree = "<group>"; };
 		28901F322668D8ED00A051E8 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		280AB46F266CF77F00E49AF1 /* MapsView */ = {
 			isa = PBXGroup;
 			children = (
+				2847D8C5266D016F002F866E /* View */,
 				2847D8A3266CFA69002F866E /* ViewModel */,
 				280AB479266CF81400E49AF1 /* ViewControllers */,
 				280AB470266CF78400E49AF1 /* Models */,
@@ -231,6 +238,7 @@
 		280AB470266CF78400E49AF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2847D8BB266CFFE8002F866E /* StopModel_codeTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				283951A526679263001E1B1A /* MapsViewController_codeTests.swift */,
+				2847D8C0266D0094002F866E /* ReportViewController_codeTest.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +324,14 @@
 				2847D8A4266CFA7D002F866E /* ReportViewModel_codeTest.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2847D8C5266D016F002F866E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2847D8C6266D017F002F866E /* MarkerView_codeTest.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		286944E426691D7300FD98DF /* Commons */ = {
@@ -774,7 +791,10 @@
 			files = (
 				283951A626679263001E1B1A /* MapsViewController_codeTests.swift in Sources */,
 				280AB460266CF3D800E49AF1 /* DoubleExtension_codeTest.swift in Sources */,
+				2847D8BC266CFFE8002F866E /* StopModel_codeTest.swift in Sources */,
+				2847D8C1266D0094002F866E /* ReportViewController_codeTest.swift in Sources */,
 				28EB9BBD266CEF19002C0773 /* DateFormatter_codeTest.swift in Sources */,
+				2847D8C7266D017F002F866E /* MarkerView_codeTest.swift in Sources */,
 				280AB46A266CF6FC00E49AF1 /* DateExtension_codeTest.swift in Sources */,
 				280AB465266CF60800E49AF1 /* StringExtension_codeTest.swift in Sources */,
 				2847D8A5266CFA7D002F866E /* ReportViewModel_codeTest.swift in Sources */,
@@ -884,7 +904,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -939,7 +959,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
