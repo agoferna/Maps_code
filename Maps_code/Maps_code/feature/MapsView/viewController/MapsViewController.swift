@@ -25,7 +25,11 @@ class MapsViewController: UIViewController {
         configureMap()
         configureNavBar()
         callToViewModelForUIUpdate()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavBar()
     }
     
     func callToViewModelForUIUpdate(){        
@@ -47,12 +51,12 @@ class MapsViewController: UIViewController {
     func configureNavBar(){
         let report = UIBarButtonItem(title: "Report", style: .plain, target: self, action: #selector(self.reportTapped))
         let itemView = ReportBarButtonItemView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        itemView.configureView(numberOfReports: "0")
+        let numberOfReports = ReportRealmModel.numberOfReports()
+        itemView.configureView(numberOfReports: "\(numberOfReports)")
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.reportTapped))
         itemView.addGestureRecognizer(tap)
         report.customView = itemView
         self.navigationItem.rightBarButtonItem = report
-        
         self.navigationItem.title =  NSLocalizedString("MapsView_Navigation_Title", comment: "")
     }
     

@@ -8,6 +8,7 @@ target 'Maps_code' do
   # Pods for Maps_code
 	pod 'GoogleMaps', '~> 3.7.0'
 	pod 'Alamofire', '~> 5.2'
+	pod 'RealmSwift', '3.21.0'
 
   target 'Maps_codeTests' do
     inherit! :search_paths

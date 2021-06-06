@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol nameReportViewProtocol {
+    func sendInformation(name: String, surname: String, phone: String, email: String, date: String, description : String)
+}
+
 class ReportView: UIView {
 
     @IBOutlet weak var nameTextField: CustomTextField!
@@ -18,10 +22,20 @@ class ReportView: UIView {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var descriptionLabelTitle: UILabel!
     @IBOutlet weak var requiredFieldLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomConstrainScrollView: NSLayoutConstraint!
     
-    func configureView(){
-        
-        
+    var delegate : nameReportViewProtocol?
+    
+    func configureView(delegate: nameReportViewProtocol?){
+
+        textView.delegate = self
+        configureStrings()
+        configureScrollViewWithKeyboard()
+        self.delegate = delegate
+    }
+    
+    func configureStrings(){
         let nameText =  NSLocalizedString("Report_Name_TextField_Placeholder", comment: "")
         nameTextField.configureTextField(placeHolder: nameText, typeOfInfo: .text, isRequired: true)
         
@@ -36,12 +50,31 @@ class ReportView: UIView {
         dateTextField.configureTextField(placeHolder: dateText, typeOfInfo: .date, isRequired: true)
         descriptionLabelTitle.text = NSLocalizedString("Report_Description_Title", comment: "")
         requiredFieldLabel.text = NSLocalizedString("Common_Required_field", comment: "")
-        textView.delegate = self
-        
     }
     
     func setTextFieldError(setError: Bool){
         requiredFieldLabel.textColor = setError ? UIColor.red : UIColor.black
+    }
+    
+    func configureScrollViewWithKeyboard(){
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = self.convert(keyboardScreenEndFrame, from: self.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+        } else {
+            scrollView.contentInset = .zero
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - self.safeAreaInsets.bottom, right: 0)
+        }
+        self.reloadInputViews()
     }
     
     @IBAction func submitAction(_ sender: Any) {
@@ -61,7 +94,13 @@ class ReportView: UIView {
             emailvalidation &&
             dateValidation &&
             textFieldValidation{
-            print ("OK")
+           
+            self.delegate?.sendInformation(name: nameTextField.textField.text ?? "",
+                                           surname: surnameTextField.textField.text ?? "",
+                                           phone: phoneTextField.textField.text ?? "",
+                                           email: emailTextField.textField.text ?? "",
+                                           date: dateTextField.textField.text ?? "",
+                                           description: self.textView.text ?? "")
         }
     }
 }
